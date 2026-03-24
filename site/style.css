@@ -447,6 +447,18 @@ section.contato address {
     text-align: center;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 .clock {
     display: flex;
     align-items: center;
@@ -615,7 +627,7 @@ footer>section>div>ul>li:hover {
 footer>p {
     text-align: center;
     font-size: 14px;
-    color: #888;
+    color: #201f1f;
     border-top: 1px solid #e0e0e0;
     padding-top: 30px;
     max-width: 1200px;
