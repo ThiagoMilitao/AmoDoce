@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Nunito:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>AmoDoce</title>
@@ -181,6 +183,61 @@
                         </a>
                     </div>
                 </section>
+
+                <section class="formulario-contato">
+                    <h2>Deixe sua Mensagem</h2>
+                    <form action="#" method="post" class="form-padrao" id="form-contato" novalidate>
+                        <fieldset>
+                            <legend>Informações Pessoais</legend>
+                            <div class="form-group">
+                                <label for="nome">Nome completo <span aria-hidden="true" class="req">*</span><span
+                                        class="sr-only"> (obrigatório)</span></label>
+                                <input type="text" id="nome" name="nome" placeholder="Seu nome completo"
+                                    autocomplete="name" required aria-required="true" aria-describedby="erro-nome">
+                                <span class="erro-msg" id="erro-nome" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail <span aria-hidden="true" class="req">*</span><span
+                                        class="sr-only"> (obrigatório)</span></label>
+                                <input type="email" id="email" name="email" placeholder="seu@email.com"
+                                    autocomplete="email" required aria-required="true" aria-describedby="erro-email">
+                                <span class="erro-msg" id="erro-email" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefone">Telefone <span aria-hidden="true" class="req">*</span><span
+                                        class="sr-only"> (obrigatório)</span></label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(11) 90000-0000"
+                                    autocomplete="tel" required aria-required="true" aria-describedby="erro-telefone">
+                                <span class="erro-msg" id="erro-telefone" aria-live="polite"></span>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Detalhes da Mensagem</legend>
+                            <div class="form-group">
+                                <label for="assunto">Assunto <span aria-hidden="true" class="req">*</span><span
+                                        class="sr-only"> (obrigatório)</span></label>
+                                <select id="assunto" name="assunto" required aria-required="true"
+                                    aria-describedby="erro-assunto">
+                                    <option value="" disabled selected>Selecione uma opção</option>
+                                    <option value="encomenda">Encomenda para Festa</option>
+                                    <option value="duvida">Dúvida sobre Produtos</option>
+                                    <option value="parceria">Parceria/Eventos</option>
+                                    <option value="outro">Outros</option>
+                                </select>
+                                <span class="erro-msg" id="erro-assunto" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem <span aria-hidden="true" class="req">*</span><span
+                                        class="sr-only"> (obrigatório)</span></label>
+                                <textarea id="mensagem" name="mensagem" rows="4"
+                                    placeholder="Como podemos adoçar o seu dia?" required aria-required="true"
+                                    aria-describedby="erro-mensagem"></textarea>
+                                <span class="erro-msg" id="erro-mensagem" aria-live="polite"></span>
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="button_fill btn-enviar">Enviar Mensagem</button>
+                    </form>
+                </section>
             </div>
         </section>
 
@@ -215,9 +272,62 @@
         <p>© 2025 Amo Doce. Todos os direitos reservados.</p>
     </footer>
     <a href="https://api.whatsapp.com/send?phone=5513974135864" class="btn-whatsapp-flutuante" target="_blank">
-   <i class="fa-brands fa-whatsapp"></i>
-   <span class="sr-only">Falar conosco pelo WhatsApp</span>
-</a>
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="sr-only">Falar conosco pelo WhatsApp</span>
+    </a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("form-contato");
+            form.addEventListener("submit", function (e) {
+                let firstInvalid = null;
+                const fields = form.querySelectorAll("input[required], select[required], textarea[required]");
+
+                fields.forEach(field => {
+                    const erroSpan = document.getElementById("erro-" + field.id);
+                    if (!field.validity.valid) {
+                        if (field.validity.valueMissing) {
+                            erroSpan.textContent = "Erro: Este campo é obrigatório.";
+                        } else if (field.validity.typeMismatch || field.validity.patternMismatch) {
+                            erroSpan.textContent = "Erro: Formato inválido.";
+                        } else {
+                            erroSpan.textContent = "Erro: Campo inválido.";
+                        }
+                        field.setAttribute("aria-invalid", "true");
+                        field.classList.add("input-erro");
+
+                        if (!firstInvalid) {
+                            firstInvalid = field;
+                        }
+                    } else {
+                        erroSpan.textContent = "";
+                        field.removeAttribute("aria-invalid");
+                        field.classList.remove("input-erro");
+                    }
+                });
+
+                if (firstInvalid) {
+                    e.preventDefault();
+                    firstInvalid.focus();
+                } else {
+                    e.preventDefault();
+                    alert("Mensagem enviada com sucesso!");
+                    form.reset();
+                }
+            });
+
+            // Remover erro ao digitar
+            form.querySelectorAll("input, select, textarea").forEach(field => {
+                field.addEventListener("input", () => {
+                    if (field.validity.valid) {
+                        const erroSpan = document.getElementById("erro-" + field.id);
+                        if (erroSpan) erroSpan.textContent = "";
+                        field.removeAttribute("aria-invalid");
+                        field.classList.remove("input-erro");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
