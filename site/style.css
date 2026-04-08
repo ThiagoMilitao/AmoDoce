@@ -399,6 +399,81 @@ section.historia img {
 }
 
 
+/* ===== TAXAS DE ENTREGA ===== */
+.entrega {
+    margin-bottom: 60px;
+}
+
+.entrega h2,
+.entrega p {
+    text-align: center;
+}
+
+.tabela-wrapper {
+    overflow-x: auto;
+    /* Garante scroll em telas pequenas */
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tabela-taxas {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    min-width: 500px;
+    /* Evita que a tabela fique muito espremida */
+}
+
+.tabela-taxas caption {
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    caption-side: bottom;
+}
+
+.tabela-taxas th,
+.tabela-taxas td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tabela-taxas thead th {
+    background-color: var(--cor-fundo);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.tabela-taxas tbody tr:hover {
+    background-color: #fdf5f6;
+    /* Leve destaque ao passar o mouse */
+}
+
+.tabela-taxas td strong {
+    color: #3E2210;
+}
+
+.tabela-taxas tfoot td {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 600px) {
+
+    .tabela-taxas th,
+    .tabela-taxas td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+}
+
 section.contato {
     max-width: 1200px;
     height: auto;
