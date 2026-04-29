@@ -381,7 +381,7 @@ section.historia img {
     position: relative;
     padding-left: 20px;
     font-size: 0.9rem;
-    color: #666;
+    color: #3E2210;
     margin-bottom: 5px;
 }
 
@@ -434,7 +434,7 @@ section.historia img {
 .tabela-taxas caption {
     padding: 10px;
     font-size: 14px;
-    color: #666;
+    color: #3E2210;
     font-style: italic;
     caption-side: bottom;
 }
@@ -469,7 +469,7 @@ section.historia img {
 .tabela-taxas tfoot td {
     text-align: center;
     font-size: 14px;
-    color: #666;
+    color: #3E2210;
     background-color: #f9f9f9;
 }
 
@@ -558,12 +558,12 @@ section.contato address {
     width: 100%;
     margin-bottom: 8px;
     font-size: 14px;
-    color: #666;
+    color: #3E2210;
     background-color: #fff;
 }
 
 .horario span {
-    color: #666;
+    color: #3E2210;
     background-color: #fff;
 }
 
@@ -632,9 +632,9 @@ section.contato>div>section:nth-of-type(2)>div a.btn1 {
 
 
 section.contato>div>section:nth-of-type(2)>div a.btn2 {
-    background-color: #DD2A7B;
-    background: linear-gradient(to right, #8134AF, #DD2A7B, #FEDA75);
-    color: #000;
+    background-color: #f7b2cb;
+    background: linear-gradient(to right, #d4b5e6, #f7b2cb, #fbe2a1);
+    color: #1A0D06;
 }
 
 /* ===== FORMULÁRIO DE CONTATO ===== */
@@ -794,7 +794,7 @@ footer>section>div:nth-child(1)>div>img {
 
 footer>section>div:nth-child(1)>p {
     font-size: 14px;
-    color: #646464;
+    color: #3E2210;
     background-color: #f9f8fa;
     margin: 0;
     line-height: 1.5;
