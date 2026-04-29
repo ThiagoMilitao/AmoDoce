@@ -10,6 +10,8 @@ body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
     overflow-x: hidden;
+    color: #333;
+    background-color: #fff;
 }
 
 h1.logo img {
@@ -87,6 +89,7 @@ nav ul li {
 a {
     text-decoration: none;
     color: #3E2210;
+    background-color: transparent;
     font-weight: 600;
     transition: color 0.3s;
 }
@@ -441,6 +444,8 @@ section.historia img {
     padding: 15px 20px;
     text-align: left;
     border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+    color: #333;
 }
 
 .tabela-taxas thead th {
@@ -454,7 +459,7 @@ section.historia img {
 
 .tabela-taxas tbody tr:hover {
     background-color: #fdf5f6;
-    /* Leve destaque ao passar o mouse */
+    color: #3E2210;
 }
 
 .tabela-taxas td strong {
@@ -536,6 +541,8 @@ section.contato address {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+    color: #3E2210;
+    background-color: #fff;
 }
 
 .clock {
@@ -552,6 +559,12 @@ section.contato address {
     margin-bottom: 8px;
     font-size: 14px;
     color: #666;
+    background-color: #fff;
+}
+
+.horario span {
+    color: #666;
+    background-color: #fff;
 }
 
 section.contato>div>section {
@@ -619,8 +632,8 @@ section.contato>div>section:nth-of-type(2)>div a.btn1 {
 
 
 section.contato>div>section:nth-of-type(2)>div a.btn2 {
+    background-color: #DD2A7B;
     background: linear-gradient(to right, #8134AF, #DD2A7B, #FEDA75);
-    /* Gradiente mais bonito do Insta */
     color: #000;
 }
 
@@ -782,6 +795,7 @@ footer>section>div:nth-child(1)>div>img {
 footer>section>div:nth-child(1)>p {
     font-size: 14px;
     color: #646464;
+    background-color: #f9f8fa;
     margin: 0;
     line-height: 1.5;
 }
@@ -800,6 +814,8 @@ footer>section>div>h3 {
     margin-top: 0;
     margin-bottom: 15px;
     padding-bottom: 0;
+    color: #3E2210;
+    background-color: #f9f8fa;
 }
 
 footer>section>div>ul {
@@ -923,4 +939,4 @@ footer>p {
     footer {
         padding: 30px 20px;
     }
-}
+}   
