@@ -35,13 +35,13 @@ body {
     outline: 3px solid #3E2210;
 }
 
-h1.logo img {
+.logo img {
     max-width: 150px;
     margin: 0 auto;
     display: block;
 }
 
-h1.logo {
+.logo {
     margin: 0;
 }
 
@@ -417,7 +417,7 @@ section.historia img {
 }
 
 /* MUDANÇA: Estilo do Preço */
-.Produtos>ul>li h3:last-of-type {
+.Produtos>ul>li .preco {
     margin-top: 20px;
     margin-bottom: 0;
     font-size: 1.15rem;
