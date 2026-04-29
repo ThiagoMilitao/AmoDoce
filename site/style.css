@@ -14,6 +14,27 @@ body {
     background-color: #fff;
 }
 
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cor-fundo);
+    color: white;
+    padding: 10px 20px;
+    z-index: 2000;
+    transition: top 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid #3E2210;
+}
+
 h1.logo img {
     max-width: 150px;
     margin: 0 auto;
