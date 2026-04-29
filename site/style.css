@@ -613,12 +613,8 @@ section.contato>div>section:nth-of-type(2)>div a i {
 
 
 section.contato>div>section:nth-of-type(2)>div a.btn1 {
-    background-color: #1A803B;
-    color: #ffffff;
-}
-
-section.contato>div>section:nth-of-type(2)>div a.btn1 i {
-    color: #ffffff;
+    background-color: #25D366;
+    color: #2b2b2b;
 }
 
 
@@ -841,7 +837,7 @@ footer>p {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25D366;
+    background-color: #1A803B;
     color: white;
     width: 60px;
     height: 60px;
@@ -858,7 +854,7 @@ footer>p {
 
 .btn-whatsapp-flutuante:hover {
     transform: scale(1.1);
-    background-color: #1ebe57;
+    background-color: #167337;
 }
 
 .btn-whatsapp-flutuante::after {
