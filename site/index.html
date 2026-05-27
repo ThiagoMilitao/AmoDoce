@@ -4,16 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Amo Doce: Confeitaria artesanal com delícias feitas com muito carinho. Bolos, cupcakes e doces especiais em São Vicente - SP. Peça pelo WhatsApp!">
+    <meta name="theme-color" content="#9E2936">
     <link
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Nunito:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>AmoDoce</title>
+    <title>Amo Doce | Confeitaria Artesanal - São Vicente SP</title>
 </head>
 
 <body>
     <a href="#main" class="skip-link">Ir para o conteúdo principal</a>
+
+    <!-- Menu lateral de acessibilidade -->
+    <div id="acessibilidade-container">
+        <button id="btn-toggle-acessibilidade" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
+            <img src="img/acessibilidade.png" alt="Ícone de acessibilidade">
+        </button>
+        <nav id="menu-acessibilidade" aria-label="Ferramentas de acessibilidade">
+            <ul>
+                <li>
+                    <button class="btn-acess-lateral" id="btn-fonte-aumentar">
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i> Aumentar fonte
+                    </button>
+                </li>
+                <li>
+                    <button class="btn-acess-lateral" id="btn-fonte-diminuir">
+                        <i class="fa-solid fa-minus" aria-hidden="true"></i> Diminuir fonte
+                    </button>
+                </li>
+                <li>
+                    <button class="btn-acess-lateral" id="btn-contraste">
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i> Modo Escuro
+                    </button>
+                </li>
+                <li>
+                    <button class="btn-acess-lateral" id="btn-inverter-cores">
+                        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Inverter cores
+                    </button>
+                </li>
+                <li>
+                    <button class="btn-acess-lateral" id="btn-destacar-links">
+                        <i class="fa-solid fa-underline" aria-hidden="true"></i> Destacar links
+                    </button>
+                </li>
+                <li>
+                    <button class="btn-acess-lateral" id="btn-reset-acessibilidade">
+                        <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Resetar alterações
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Região aria-live para anunciar mudanças de acessibilidade para leitores de tela -->
+    <div id="acess-anuncio" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+    
     <header>
         <div class="topo">
             <div class="logo">
@@ -30,7 +87,7 @@
                 <span class="bar"></span>
             </label>
 
-            <nav>
+            <nav aria-label="Menu de navegação principal">
                 <ul>
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#historia">Nossa História</a></li>
@@ -181,7 +238,7 @@
                     <h3>Endereço para retirada</h3>
                     <div class="adress">
                         <div>
-                            <i class="fa-solid fa-location-dot"></i>
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                             <address>
                                 Rua vinte e um, 7
                                 Vila Margarida - São Vicente, SP
@@ -189,7 +246,7 @@
                             </address>
                         </div>
                         <div>
-                            <i class="fa-solid fa-phone"></i>
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
                             <a href="tel:5513974135864">(13)
                                 97413-5864</a>
                         </div>
@@ -197,7 +254,7 @@
 
                     <div>
                         <div class="clock">
-                            <i class="fa-regular fa-clock"></i>
+                            <i class="fa-regular fa-clock" aria-hidden="true"></i>
                             <h3>Horário de Funcionamento</h3>
                         </div>
                         <div class="horario">
@@ -219,13 +276,15 @@
                     <h3>Faça seu pedido</h3>
                     <p class="subtitulo-contato">Nos chame no whatsapp e faça seu pedido!</p>
                     <div>
-                        <a class="btn1" target="_blank"
-                            href="https://api.whatsapp.com/send?phone=5513974135864&text=Ol%C3%A1%2C+gostaria+de+fazer+um+pedido.%F0%9F%98%8B">
-                            <i class="fa-brands fa-whatsapp"></i>
+                        <a class="btn1" target="_blank" rel="noopener noreferrer"
+                            href="https://api.whatsapp.com/send?phone=5513974135864&text=Ol%C3%A1%2C+gostaria+de+fazer+um+pedido.%F0%9F%98%8B"
+                            aria-label="Contato pelo WhatsApp: (13) 97413-5864 (abre em nova aba)">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                             WhatsApp: (13) 97413-5864
                         </a>
-                        <a class="btn2" target="_blank" rel="noopener" href="https://instagram.com/amodoce">
-                            <i class="fa-brands fa-instagram"></i>
+                        <a class="btn2" target="_blank" rel="noopener noreferrer" href="https://instagram.com/amodoce"
+                            aria-label="Perfil no Instagram: AmoDoce (abre em nova aba)">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                             Instagram: AmoDoce
                         </a>
                     </div>
@@ -311,19 +370,187 @@
             <div>
                 <h3>Especialidades</h3>
                 <ul>
-                    <li>Copo da Felicidade</li>
-                    <li>Bolo Vulcão</li>
-                    <li>Bolo Caseiro</li>
+                    <li><a href="#produtos">Copo da Felicidade</a></li>
+                    <li><a href="#produtos">Bolo Vulcão</a></li>
+                    <li><a href="#produtos">Bolo Caseiro</a></li>
                 </ul>
             </div>
         </section>
         <p>© 2025 Amo Doce. Todos os direitos reservados.</p>
     </footer>
-    <a href="https://api.whatsapp.com/send?phone=5513974135864" class="btn-whatsapp-flutuante" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://api.whatsapp.com/send?phone=5513974135864" class="btn-whatsapp-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Falar conosco pelo WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
         <span class="sr-only">Falar conosco pelo WhatsApp</span>
     </a>
     <script>
+        /* ============================================
+           ACESSIBILIDADE - Menu Lateral
+        ============================================ */
+        (function () {
+            'use strict';
+
+            const html = document.documentElement;
+            const body = document.body;
+            const anuncio = document.getElementById('acess-anuncio');
+
+            function anunciar(msg) {
+                if (!anuncio) return;
+                anuncio.textContent = '';
+                setTimeout(function () { anuncio.textContent = msg; }, 100);
+            }
+
+            // --- TOGGLE MENU LATERAL ---
+            const btnToggleAcess = document.getElementById('btn-toggle-acessibilidade');
+            const menuAcess = document.getElementById('menu-acessibilidade');
+
+            btnToggleAcess.addEventListener('click', () => {
+                const isExpanded = btnToggleAcess.getAttribute('aria-expanded') === 'true';
+                btnToggleAcess.setAttribute('aria-expanded', !isExpanded);
+                menuAcess.classList.toggle('aberto');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!document.getElementById('acessibilidade-container').contains(e.target)) {
+                    menuAcess.classList.remove('aberto');
+                    btnToggleAcess.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // --- ALTO CONTRASTE (MODO ESCURO) ---
+            const btnContraste = document.getElementById('btn-contraste');
+            let altoContrasteAtivo = localStorage.getItem('altoContraste') === 'true';
+
+            function aplicarContraste(ativo, anunciarMudanca) {
+                if (ativo) {
+                    body.classList.add('alto-contraste');
+                    btnContraste.setAttribute('aria-pressed', 'true');
+                    if (anunciarMudanca) anunciar('Modo escuro ativado.');
+                } else {
+                    body.classList.remove('alto-contraste');
+                    btnContraste.setAttribute('aria-pressed', 'false');
+                    if (anunciarMudanca) anunciar('Modo escuro desativado.');
+                }
+                localStorage.setItem('altoContraste', ativo);
+            }
+
+            btnContraste.addEventListener('click', function () {
+                altoContrasteAtivo = !altoContrasteAtivo;
+                aplicarContraste(altoContrasteAtivo, true);
+            });
+            aplicarContraste(altoContrasteAtivo, false);
+
+            // --- INVERTER CORES ---
+            const btnInverter = document.getElementById('btn-inverter-cores');
+            let inverterAtivo = localStorage.getItem('inverterCores') === 'true';
+
+            function aplicarInversao(ativo, anunciarMudanca) {
+                if (ativo) {
+                    body.classList.add('inverter-cores');
+                    if (anunciarMudanca) anunciar('Cores invertidas.');
+                } else {
+                    body.classList.remove('inverter-cores');
+                    if (anunciarMudanca) anunciar('Inversão de cores desativada.');
+                }
+                localStorage.setItem('inverterCores', ativo);
+            }
+
+            btnInverter.addEventListener('click', function () {
+                inverterAtivo = !inverterAtivo;
+                aplicarInversao(inverterAtivo, true);
+            });
+            aplicarInversao(inverterAtivo, false);
+
+            // --- DESTACAR LINKS ---
+            const btnDestacar = document.getElementById('btn-destacar-links');
+            let destacarAtivo = localStorage.getItem('destacarLinks') === 'true';
+
+            function aplicarDestaque(ativo, anunciarMudanca) {
+                if (ativo) {
+                    body.classList.add('destacar-links');
+                    if (anunciarMudanca) anunciar('Links destacados.');
+                } else {
+                    body.classList.remove('destacar-links');
+                    if (anunciarMudanca) anunciar('Destaque de links desativado.');
+                }
+                localStorage.setItem('destacarLinks', ativo);
+            }
+
+            btnDestacar.addEventListener('click', function () {
+                destacarAtivo = !destacarAtivo;
+                aplicarDestaque(destacarAtivo, true);
+            });
+            aplicarDestaque(destacarAtivo, false);
+
+            // --- TAMANHO DE FONTE ---
+            const fonteSizes = ['', 'fonte-media', 'fonte-grande', 'fonte-muito-grande'];
+            const btnFonteAumentar = document.getElementById('btn-fonte-aumentar');
+            const btnFonteDiminuir = document.getElementById('btn-fonte-diminuir');
+
+            let nivelFonte = parseInt(localStorage.getItem('nivelFonte') || '0', 10);
+            if (nivelFonte < 0 || nivelFonte > 3) nivelFonte = 0;
+
+            function atualizarFonte(nivel, anunciarMudanca) {
+                fonteSizes.forEach(cls => { if (cls) html.classList.remove(cls); });
+                if (nivel > 0 && fonteSizes[nivel]) {
+                    html.classList.add(fonteSizes[nivel]);
+                }
+                nivelFonte = nivel;
+                localStorage.setItem('nivelFonte', nivel);
+                if (anunciarMudanca) anunciar('Tamanho da fonte alterado.');
+            }
+
+            btnFonteAumentar.addEventListener('click', function () {
+                if (nivelFonte < 3) atualizarFonte(nivelFonte + 1, true);
+            });
+
+            btnFonteDiminuir.addEventListener('click', function () {
+                if (nivelFonte > 0) atualizarFonte(nivelFonte - 1, true);
+            });
+
+            atualizarFonte(nivelFonte, false);
+
+            // --- RESETAR ALTERAÇÕES ---
+            const btnReset = document.getElementById('btn-reset-acessibilidade');
+            if (btnReset) {
+                btnReset.addEventListener('click', function () {
+                    if (altoContrasteAtivo) {
+                        altoContrasteAtivo = false;
+                        aplicarContraste(false, false);
+                    }
+                    if (inverterAtivo) {
+                        inverterAtivo = false;
+                        aplicarInversao(false, false);
+                    }
+                    if (destacarAtivo) {
+                        destacarAtivo = false;
+                        aplicarDestaque(false, false);
+                    }
+                    if (nivelFonte !== 0) {
+                        atualizarFonte(0, false);
+                    }
+                    anunciar('Todas as alterações de acessibilidade foram resetadas.');
+                });
+            }
+
+            // --- FECHAR MENU MOBILE COM TECLA ESCAPE ---
+            const menuToggle = document.getElementById('menu-toggle');
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    if (menuToggle && menuToggle.checked) menuToggle.checked = false;
+                    if (menuAcess.classList.contains('aberto')) {
+                        menuAcess.classList.remove('aberto');
+                        btnToggleAcess.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+
+        })();
+    </script>
+
+    <script>
+        /* ============================================
+           VALIDAÇÃO DO FORMULÁRIO DE CONTATO
+        ============================================ */
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.getElementById("form-contato");
             form.addEventListener("submit", function (e) {
@@ -376,6 +603,44 @@
             });
         });
     </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 
 </html>
